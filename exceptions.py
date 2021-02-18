@@ -1,0 +1,2 @@
+class ImageNotFoundError(FileNotFoundError):
+    pass

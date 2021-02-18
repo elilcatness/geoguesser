@@ -1,6 +1,7 @@
+from random import shuffle
+
 import requests
 from bs4 import BeautifulSoup
-from random import shuffle
 
 
 def parse_cities():
@@ -12,4 +13,4 @@ def parse_cities():
     rows = soup.find('table').find('tbody').find_all('tr')[2:]
     cities = list(filter(lambda x: x, [x[4] for x in map(lambda y: y.get_text().split('\n'), rows)]))
     shuffle(cities)
-    return cities[:10]
+    return cities[:40]
