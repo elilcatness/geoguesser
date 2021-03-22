@@ -1,3 +1,5 @@
+import os
+
 import requests
 from io import BytesIO
 
@@ -9,7 +11,7 @@ def get_image_of_city(city: str, img_type: str):
     geocode_error_msg = 'Не удалось найти этот город на карте'
     static_url = 'http://static-maps.yandex.ru/1.x/'
     static_error_msg = 'Не удалось получить изображение города на карте'
-    apikey = '40d1649f-0493-4b70-98ba-98533de7710b'
+    apikey = os.environ['GEOCODE_APIKEY']
 
     geocode_response = requests.get(geocode_url, params={'geocode': city,
                                                          'format': 'json',
