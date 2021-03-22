@@ -1,4 +1,5 @@
 from random import shuffle
+from dotenv import load_dotenv
 
 import pygame as pg
 
@@ -180,6 +181,7 @@ def main():
 
 
 if __name__ == '__main__':
+    load_dotenv()
     callback = main()
     if callback:
         print(callback)
