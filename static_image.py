@@ -11,7 +11,7 @@ def get_image_of_city(city: str, img_type: str):
     geocode_error_msg = 'Не удалось найти этот город на карте'
     static_url = 'http://static-maps.yandex.ru/1.x/'
     static_error_msg = 'Не удалось получить изображение города на карте'
-    apikey = os.environ['GEOCODE_APIKEY']
+    apikey = os.getenv('GEOCODE_APIKEY')
 
     geocode_response = requests.get(geocode_url, params={'geocode': city,
                                                          'format': 'json',
